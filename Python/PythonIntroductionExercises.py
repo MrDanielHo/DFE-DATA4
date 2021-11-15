@@ -8,9 +8,11 @@ print( "What is your first name?")
 firstname = input()
 print ( "What is your family name?")
 familyname = input()
-print ("Hello " + firstname + " " + familyname + "!")
-number1 = float( input ( "Please enter the first number: " ))
-number2 = float( input ( "Please enter the second number: " ))
-answer = number1 + number2
+print ( "Hello " + firstname + " " + familyname + "!" )
 
+print( "Please enter the first number:" )
+number1 = float( input ())
+print( "Please enter the second number:" )
+number2 = float( input ())
+answer = number1 + number2
 print(number1, "+", number2, "=", answer)
