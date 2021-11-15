@@ -1,6 +1,8 @@
 # shoppingList = ["Meat", "Vegetable", "Cake", "Beverages for the weekend."]
 # print(shoppingList[)
 
+# control + forward slash to comment highlighted sections
+
 # cool_cows = ["Winnie the Moo", "Moolan", "Milkshake", "Mooana"]
 # cool_sheep = ["Baaaart", "Baaaarnaby"]
 # cool_pigs = ["Chris P. Bacon", "Hamlet", "Hogwarts"]
