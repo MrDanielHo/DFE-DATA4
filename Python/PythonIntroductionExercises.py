@@ -15,4 +15,6 @@ number1 = float( input ())
 print( "Please enter the second number:" )
 number2 = float( input ())
 answer = number1 + number2
-print(number1, "+", number2, "=", answer)
+# print(number1, "+", number2, "=", answer)
+print(f"{number1}+{number2}")
+# We can use print(f"{variable}") to print the value of the variable.
