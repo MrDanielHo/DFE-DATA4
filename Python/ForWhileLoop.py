@@ -49,18 +49,23 @@
 # print('Nice. It was ' + str(secretNumber) + ".\nIt took you " + str(guessCount) + " guesses.")
 
 # 04. Write a Python program that accepts a word from the user and reverse it.
-userWord = input("Please enter a word:\n")
+# userWord = input("Please enter a word:\n")
 # reverseWold = userWord[::-1]
 # print(reverseWord)
-reverseWord = ""
-letterCount = len(userWord)
-for i in range(letterCount-1,-1,-1):
-    reverseWord = reverseWord + userWord[i]
-print(reverseWord)
+# reverseWord = ""
+# letterCount = len(userWord)
+# for i in range(letterCount-1,-1,-1):
+#     reverseWord = reverseWord + userWord[i]
+# print(reverseWord)
 
-# The Python Workbook
-
-# Exercise 61: Average
+'''
+The Python Workbook
+Exercise 61: Average
+In this exercise you will create a program that computes the average of a collection
+of values entered by the user. The user will enter 0 as a sentinel value to indicate
+that no further values will be provided. Your program should display an appropriate
+error message if the first value entered by the user is 0.
+'''
 # scoresList = []
 # print("Let us find the average scores.")
 # while True:
@@ -71,4 +76,18 @@ print(reverseWord)
 #     print(scoresList)
 # print("The average score is " + str(sum(scoresList) / len(scoresList)))
 
-# The Python Workbook - Exercise 62: Discount Table
+'''
+The Python Workbook
+Exercise 62: Discount Table
+Retailer is having a 60 percent off sale
+show original prices and the prices after the discount.
+use a loop, showing the original price, the discount amount,
+and the new price for purchases of $4.95, $9.95, $14.95, $19.95 and $24.95.
+Ensure that prices are rounded to 2 decimal places 
+'''
+i = 0
+priceOriginal = [4.95, 9.95, 14.95, 19.95]
+print(priceOriginal)
+print("Price\tDisc\tSale Price")
+for i in priceOriginal:
+    print(str(i) + "\t" + str(round(i * 0.6,2)) + "\t" + str(round(i * 0.4,2)))
