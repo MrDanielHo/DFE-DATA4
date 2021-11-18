@@ -124,8 +124,10 @@ pay the total. Then compute the remainder when this number of pennies is divided
 by 5. Finally, adjust the total down if the remainder is less than 2.5. Otherwise adjust
 the total up.
 '''
-priceNickle = 0
+priceCAD = 0
 print("No more cash pennies any more.")
-print("{:.2f}".format(5.981899466123))
-# while True:
-#     if "{:.2f}".format(input("What is the price of the product?")) % 5 == 0:
+while True:
+    priceCAD = str(input("What is the price of the product?\n"))
+    pricePennies = "{:.2f}".format(priceCAD * 100)
+    if pricePennies % 5 == 0:
+        
