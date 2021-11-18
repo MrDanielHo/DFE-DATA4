@@ -87,9 +87,45 @@ use a loop, showing the original price, the discount amount,
 and the new price for purchases of $4.95, $9.95, $14.95, $19.95 and $24.95.
 Ensure that prices are rounded to 2 decimal places 
 '''
-i = 0
-priceOriginal = [4.95, 9.95, 14.95, 19.95]
-print(priceOriginal)
-print("Price\tDisc\tSale Price")
-for i in priceOriginal:
-    print(str(i) + "\t" + str(round(i * 0.6,2)) + "\t" + str(round(i * 0.4,2)))
+# i = 0
+# priceOriginal = [4.95, 9.95, 14.95, 19.95]
+# print("Price\tDisc\tSale Price")
+# for i in priceOriginal:
+#     print(str(i) + "\t" + str(round(i * 0.6,2)) + "\t" + str(round(i * 0.4,2)))
+'''
+Exercise 63:Temperature ConversionTable
+Write a program that displays a temperature conversion table for degrees Celsius and
+degrees Fahrenheit. The table should include rows for all temperatures between 0
+and 100 degrees Celsius that are multiples of 10 degrees Celsius. Include appropriate
+headings on your columns. The formula for converting between degrees Celsius and
+degrees Fahrenheit can be found on the internet.
+'''
+# tempC = 0
+# print("Celcius\tFahrenheit")
+# for tempC in range(0,101,10):
+#     print(str(tempC) + "\N{DEGREE SIGN}c\t" + str(round(tempC / 60 * 140,2)) + "\N{DEGREE SIGN}f")
+'''
+Exercise 64:No More Pennies
+4th February 2013 was the last day that pennies were distributed by the Royal Canadian
+Mint. Now that pennies have been phased out retailers must adjust totals so that they
+are multiples of 5 cents when they are paid for with cash (credit card and debit card
+transactions continue to be charged to the penny). While retailers have some freedom
+in how they do this, most choose to round to the closest nickel (5 cents).
+Write a program that reads prices from the user until a blank line is entered.
+Display the total cost of all the entered items on one line, followed by the amount
+due 
+
+-- if the customer pays with cash on a second line. --
+
+The amount due for a cash
+payment should be rounded to the nearest nickel. One way to compute the cash
+payment amount is to begin by determining how many pennies would be needed to
+pay the total. Then compute the remainder when this number of pennies is divided
+by 5. Finally, adjust the total down if the remainder is less than 2.5. Otherwise adjust
+the total up.
+'''
+priceNickle = 0
+print("No more cash pennies any more.")
+print("{:.2f}".format(5.981899466123))
+# while True:
+#     if "{:.2f}".format(input("What is the price of the product?")) % 5 == 0:
