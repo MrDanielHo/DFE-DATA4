@@ -62,31 +62,113 @@ Key concepts:
 Class initialization, instance methods and instance representation.
     Defining and using functions that take class instances as input parameters
 '''
-class Budget:
+# class Budget:
+#     def __init__(self):
+#         self.balance = 0.0
+#     def deposit(self,moneyIn):
+#         self.balance += moneyIn
+#     def withdraw(self,moneyOut):
+#         self.balance -= moneyOut
+#     def transferTo(self,account,moneyTrsf):
+#         self.withdraw(moneyTrsf)
+#         account.deposit(moneyTrsf)
+
+# food = Budget()
+# clothes = Budget()
+# entertainment = Budget()
+
+# food.deposit(100)
+# clothes.deposit(100)
+# entertainment.deposit(80)
+# food.withdraw(30) # Groceries
+# clothes.withdraw(50) # Pair of jeans
+# entertainment.withdraw(20) # Cinema ticket
+# print(f"Food balance:\t|\tClothes balance:\t|\tEntertainment balance:\n\t{food.balance}\t|\t\t{clothes.balance}\t\t|\t\t\t{entertainment.balance}\n")
+# entertainment.transferTo(food, 30)
+# print(f"Food balance:\t|\tClothes balance:\t|\tEntertainment balance:\n\t{food.balance}\t|\t\t{clothes.balance}\t\t|\t\t\t{entertainment.balance}\n")
+'''
+2. Polygon Area Calculator
+Goal:
+    “Create class and sub-class objects which represent different geometrical shapes, such as Rectangles and Squares”
+
+Considerations:
+    this is the perfect project to understand how classes can develop relationships in the form of sharing class methods.
+    Such relationships will be conveyed through the use of geometry.
+    The main takeaway is the understanding that Python is a flexible language is which you can define your own custom objects, whose functionality and features (class methods) can be shared with other similar objects.
+
+Approach:
+    represent geometry shapes as classes and give them the ability to compute routine geometry calculations in the forms of class methods.
+    Leverage class parent/child relationships to extend class functionality.
+
+Key concepts:
+    Class initialization, instance methods and instance representation. Class inheritance.
+'''
+# import pdb
+# pdb.set_trace()
+
+from abc import ABC, abstractmethod
+from math import tan, pi
+
+class Shape():
     def __init__(self):
-        self.balance = 0.0
-    def deposit(self,moneyIn):
-        self.balance += moneyIn
-    def withdraw(self,moneyOut):
-        self.balance -= moneyOut
-    def transferTo(self,account,moneyTrsf):
-        self.withdraw(moneyTrsf)
-        account.deposit(moneyTrsf)
+        self.shape = 'shape'
+    def __str__(self):
+        return "I am a {}.".format(self.shape)
 
-food = Budget()
-clothes = Budget()
-entertainment = Budget()
+class Polygon(Shape):
+    def __init__(self):
+        self.shape = ''
+        self.sidelenghts = ''
 
-food.deposit(100)
-clothes.deposit(100)
-entertainment.deposit(80)
+    def calc_edges(self):
+        return len(self.sidelenghts)
 
-food.withdraw(30) # Groceries
-clothes.withdraw(50) # Pair of jeans
-entertainment.withdraw(20) # Cinema ticket
+    def calc_perimeter(self):
+        return sum(self.sidelenghts)
 
-print(f"Food balance:\t|\tClothes balance:\t|\tEntertainment balance:\n\t{food.balance}\t|\t\t{clothes.balance}\t\t|\t\t\t{entertainment.balance}\n")
+    # the apothem is calculated as: length of a side / ( 2 x tangent of ( 180° / number of sides ) )
+    def apothem(self):
+        sidelength = self.calc_perimeter() / self.calc_edges()
+        polygon_apothem = (sidelength / (2 *(tan(pi/self.calc_edges()))))
+        return polygon_apothem
 
-entertainment.transferTo(food, 30)
+    # the area of any regular polygon can be calculated as: perimeter x apothem / 2
+    def calc_area(self): 
+        polygon_area = (self.calc_perimeter()*self.apothem()/2)
+        return polygon_area
 
-print(f"Food balance:\t|\tClothes balance:\t|\tEntertainment balance:\n\t{food.balance}\t|\t\t{clothes.balance}\t\t|\t\t\t{entertainment.balance}\n")
+class Triangle(Polygon):
+    def __init__(self):
+        self.shape = 'triangle'
+        self.sidelenghts = [5, 5, 3]
+
+class Rectangle(Polygon):
+    def __init__(self):
+        self.shape = 'rectangle'
+        self.sidelenghts = [4, 4, 4, 4]
+
+class Pentagon(Polygon):
+    def __init__(self):
+        self.shape = 'pentagon'
+        self.sidelenghts = [5, 5, 5, 5, 5]
+
+class Hexagon(Polygon):
+    def __init__(self):
+        self.shape = 'hexagon'
+        self.sidelenghts = [6, 6, 6, 6, 6, 6]
+
+class Heptagon(Polygon):
+    def __init__(self):
+        self.shape = 'heptagon'
+        self.sidelenghts =  [7, 7, 7, 7, 7, 7, 7]
+
+class Octagon(Polygon):
+    def __init__(self):
+        self.shape = 'octagon'
+        self.sidelenghts = [8, 8, 8, 8, 8, 8, 8 ,8]
+
+any_shape = Triangle()
+print(any_shape)
+print(any_shape.calc_perimeter())
+print(any_shape.calc_edges())
+print(any_shape.calc_area())
