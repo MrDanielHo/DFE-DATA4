@@ -124,10 +124,10 @@ pay the total. Then compute the remainder when this number of pennies is divided
 by 5. Finally, adjust the total down if the remainder is less than 2.5. Otherwise adjust
 the total up.
 '''
+# import pdb
+# pdb.set_trace()
 priceCAD = 0
 print("No more cash pennies any more.")
 while True:
-    priceCAD = str(input("What is the price of the product?\n"))
-    pricePennies = "{:.2f}".format(priceCAD * 100)
-    if pricePennies % 5 == 0:
-        
+    priceCAD = float(input("What is the Canadian Dollar Price?\n"))
+    print(f"{5 * round(priceCAD/5,2):.2f}")
