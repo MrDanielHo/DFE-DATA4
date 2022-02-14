@@ -1,0 +1,1 @@
+Self training sessions 2022-02-14 onwards.
